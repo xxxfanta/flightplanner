@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <title>Travel Planner v.00001</title>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+        <!-- MapBox-->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+
+        <!-- MapBox Geocoder -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+        <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+
+        <!-- UI KIT -->
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit-icons.min.js"></script>
+
+        <!-- Turg - Plugin for drawing on map -->
+        <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js' charset='utf-8'></script>
+
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <div id="header">
+            <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
+                    <h1>Travel Planner</h1>
+                </div>
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active">
+                            <a href="/">
+                                Plan your trip
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about.html">
+                                Explore trips
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about.html">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about.html">
+                                Imprint
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="main" uk-grid>
+
+            <div id="sidenav" class="uk-width-1-4">
+                <h2>Unnamed Trip</h2>
+
+                <div id="locations" class="">
+                    <div class="location location__start">
+                        <form class="uk-margin-bottom">
+                            <input id="test" type="input" class="uk-input" placeholder="Start of your trip"/>
+                        </form>
+                        <div>
+                            <button class="uk-button uk-button-default">
+                                Save
+                            </button>
+                            <button class="uk-button uk-button-default">
+                                Add Date
+                            </button>
+                        </div>
+                    </div>
+                    <div class="location location__next"  data-transportation="flight">
+
+                    </div>
+                </div>
+            </div>
+
+            <div id='map' class="uk-width-3-4"></div>
+            <div id='geocoder' class='geocoder'></div>
+            <div class='overlay'>
+                <button id='replay'>Replay</button>
+            </div>
+        </div>
+        <div id="footer">
+
+        </div>
+        <!-- JS stuff -->
+        <script src="app.js"></script>
+    </body>
+</html>
